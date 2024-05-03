@@ -1,0 +1,94 @@
+:root {
+  --green: #00FF00;
+  --white: #FFFFFF;
+  --black: #000000;
+  --paragraph: "Roboto", sans-serif;
+}
+h1,h2{
+  font-family: var(--paragraph);
+  font-style: italic
+
+}
+h3, p,a{
+  font-family: var(--paragraph);
+}
+html{
+  box-sizing: border-box;
+  /*1rem = 10px*/
+  font-size: 62.5%;
+}
+*,*::after, *::before{
+  box-sizing: inherit;
+}
+p {
+  font-family: var(--paragraph);
+  font-size: 3rem;
+}
+body {
+  background: var(--bg);
+  color: var(--fontColor);
+  font-family: helvetica;
+}
+header{
+  min-height: 600;
+}
+li {
+  list-style: circle;
+}
+@media(min-with:769px){
+  
+
+}
+.list {
+  list-style: square;
+}
+
+.light-theme {
+  --bg: var(--green);
+  --fontColor: var(--black);
+  --btnBg: var(--black);
+  --btnFontColor: var(--white);
+}
+
+.dark-theme {
+  --bg: var(--black);
+  --fontColor: var(--green);
+  --btnBg: var(--white);
+  --btnFontColor: var(--black);
+}
+.btn {
+  position: absolute;
+  top: 200px;
+  left: 250px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  color: var(--btnFontColor);
+  background-color: var(--btnBg);
+}
+.contenedor{
+  max-width: 120rem;
+  margin: 0 auto;
+  width: 95%;
+}
+
+.contenedor-navegacion{
+  background-color: #000000;
+}
+.contenido-navegacion{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nombre h2,.navegacion a {
+  color: var(--white);
+}
+.nombre h2{
+  font-size: 3rem;
+}
+.navegacion a{
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1rem;
+}
