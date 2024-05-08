@@ -8,27 +8,27 @@
         <script src="https://kit.fontawesome.com/da34e8120e.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
     </head>
-    <header class="encabezado">
-        
-        <div class="contenedor-navegacion">
-            <div class="contenido-navegacion contenedor">
-                <div class="nombre">
-                    <h2>César Ruiz Flores</h2>
-                </div>
-                <nav class="navegacion">
-                    <a href="#">inicio</a>
-                    <a href="#">acerca de mi</a>
-                    <a href="#">contacto</a>
-                </nav>
-            </div>
-        </div>
-        
-    </header>
+    
     <body class="light-theme">
+        <header class="header" id="inicio">  
+            <div class="nombre">
+                <h2>César Ruiz Flores</h2>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+            <nav class="menu-navegacion">
+                <a href="#inicio">inicio</a>
+                <a href="#servicio">acerca de mi</a>
+                <a href="#">contacto</a>
+            </nav>
+            <div class="contenedor head">
+                <h1 class="titulo">convertimos tus sueños en realidad</h1>
+                <p class="copy">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, sequi.</p>
+            </div>
+        </header>
         <h1>Task List</h1>
         <p id="msg">Current tasks:</p>
         <ul>
@@ -40,20 +40,82 @@
         <div>
             <button class="btn">Dark</button>
         </div>
+        <main>
+            <section class="contenedor" id="servicio">
+                <h2 class="subtitulo">Nuestro Servicio</h2>
+                <div class="contenedor-servicio">
+                    <img src="img/data.svg" alt="">
+                    <div class="checklist-servicio">
+                        <div class="service">
+                            <h3 class="n-service"><span class="number">1</span>Diseño web</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit tempora natus ullam exercitationem corporis laboriosam. Qui a dolorem sed explicabo.</p>
+                        </div>
+                        <div class="service">
+                            <h3 class="n-service"><span class="number">2</span>Diseño web</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit tempora natus ullam exercitationem corporis laboriosam. Qui a dolorem sed explicabo.</p>
+                        </div>
+                        <div class="service">
+                            <h3 class="n-service"><span class="number">3</span>Diseño web</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit tempora natus ullam exercitationem corporis laboriosam. Qui a dolorem sed explicabo.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="gallery" id="portfolio">
+                <div class="contenedor">
+                    <h2 class="subtitulo">Galeria</h2>
+                    <div class="contenedor-galeria">
+                        <img src="img/deepLearningCer.png" alt="" class="img-galeria">
+                        <p>Open a PDF file <a href="img/deeplearningcert.pdf">example</a>.</p>
+                        <img src="img/machineLearning.png" alt="" class="img-galeria">
+                        <img src="img/" alt="" class="img-galeria">
+                        <img src="img/" alt="" class="img-galeria">
+                        <img src="img/" alt="" class="img-galeria">
+                        <img src="img/" alt="" class="img-galeria">
+                        <img src="img/" alt="" class="img-galeria">
+                    </div>
+                </div>
+            </section>
+            <section class="imagen-light">
+                <i class="fa-solid fa-xmark close"></i>
+                <img src="img/computer-61.svg" alt="" class="agregar-imagen">
+            </section>
+            <section class="contenedor" id="expertos">
+                <h2 class="subtitulo">Expertos en</h2>
+                <section class="experts">
+                    <div class="cont-expert">
+                        <img src="img/search-engine-78.svg" alt="">
+                        <h2 class="n-expert">Analytics</h2>
+                    </div>
+                    <div class="cont-expert">
+                        <img src="img/search-engine-78.svg" alt="">
+                        <h2 class="n-expert">Analytics</h2>
+                    </div>
+                    <div class="cont-expert">
+                        <img src="img/search-engine-78.svg" alt="">
+                        <h2 class="n-expert">Analytics</h2>
+                    </div>
+                </section>
+            </section>
+        </main>
+        <footer id="contacto">
+            <div class="contenedor footer-content">
+                <div class="contact-us">
+                    <h1 class="brand">telefono</h1>
+                </div>
+                <div class="social-media">
+                    
+                    <a href="#" class="social-media-icon"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    <a href="#" class="social-media-icon"><i class="fab fa-twitter-square"></i></a>
+                    <a href="https://www.linkedin.com/in/cesar-ruiz-f/" class="social-media-icon"><i class="fa-brands fa-linkedin "></i></a>
+                    
+                </div>
+            </div> 
+            <div class="line"></div>
+        </footer>
         <script src="js/app.js"></script>
+        <script src="js/menu.js"></script>
+        <script src="js/lightbox.js"></script>
     </body>
-    <footer>
-        <div class="contenedor-footer">
-            <div class="contacto">
-                <h1>telefono</h1>
-            </div>
-            <div class="redes-sociales">
-                
-                <i class="fa fa-facebook-square" aria-hidden="true"></i>
-                <i class="fab fa-twitter-square"></i>
-                <a href="https://www.linkedin.com/in/cesar-ruiz-f/"><i class="fa-brands fa-linkedin"></i></a>
-                <h1></h1>
-            </div>
-        </div> 
-    </footer>
+    
 </html>
