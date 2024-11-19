@@ -17,10 +17,15 @@ body {
 }
 .contenedor{
   width: 90%;
-  max-width: 1200px;
+  max-width: 1300px;
   overflow: hidden;
   margin: auto;
   padding: 60px 0;
+}
+.name{
+  font-family:"Brush Script MT", cursive;
+  font-size: 48px;
+  padding: 20px;
 }
 header{
   height: 100vh;
@@ -39,8 +44,11 @@ header{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 70vh;            /* Altura del contenedor padre */
   color: #fff;
 }
+
+
 .menu-navegacion{
   position: fixed;
   top: 0;
@@ -120,6 +128,29 @@ header{
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+.contenedor-objetivos{
+  display: flex;
+  flex-direction: row; /* Alinea los elementos en una columna */
+  /*justify-content: space-evenly;
+  flex-wrap: wrap;*/
+}
+
+.title {
+  text-align: center; /* Centra el texto del título */
+  font-size: 24px; /* Tamaño de fuente del título */
+  padding: 10px; /* Espaciado interno */
+  background-color: #f0f0f0; /* Color de fondo opcional */
+  flex-wrap: wrap;
+}
+
+
+
+.column {
+  flex: 1; /* Esto asegura que ambas columnas tengan el mismo ancho */
+  padding: 10px; /* Espaciado interno para las columnas */
+  border: 1px solid #ccc; /* Borde opcional para visualización */
+}
+
 .img-galeria{
   object-fit: cover;
   width: 30%;
