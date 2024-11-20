@@ -127,12 +127,18 @@ header{
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  
+}
+.contenedor-portfolio{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 }
 .contenedor-objetivos{
   display: flex;
   flex-direction: row; /* Alinea los elementos en una columna */
-  /*justify-content: space-evenly;
-  flex-wrap: wrap;*/
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .title {
@@ -150,7 +156,15 @@ header{
   padding: 10px; /* Espaciado interno para las columnas */
   border: 1px solid #ccc; /* Borde opcional para visualización */
 }
-
+.img-portfolio{
+  object-fit:contain;
+  width: 500px;
+  height: 400px;
+  display: block;
+  margin-bottom: 15px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+  cursor: pointer;
+}
 .img-galeria{
   object-fit: cover;
   width: 30%;
