@@ -131,7 +131,7 @@ header{
 }
 .contenedor-portfolio{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-direction: column;
 }
 .contenedor-objetivos{
@@ -155,11 +155,12 @@ header{
   flex: 1; /* Esto asegura que ambas columnas tengan el mismo ancho */
   padding: 10px; /* Espaciado interno para las columnas */
   border: 1px solid #ccc; /* Borde opcional para visualización */
+  width: 20%;
 }
 .img-portfolio{
   object-fit:contain;
-  width: 500px;
-  height: 400px;
+  width: 40%;
+  height: 60%;
   display: block;
   margin-bottom: 15px;
   box-shadow: 0 0 6px rgba(0, 0, 0, .5);
