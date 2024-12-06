@@ -136,9 +136,16 @@ header{
 }
 .contenedor-objetivos{
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row; /* Alinea los elementos en una columna */
   justify-content: space-around;
-  flex-wrap: wrap;
+}
+.column{
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  text-align: center;
 }
 
 .title {
@@ -148,19 +155,10 @@ header{
   background-color: #f0f0f0; /* Color de fondo opcional */
   flex-wrap: wrap;
 }
-
-
-
-.column {
-  flex: 1; /* Esto asegura que ambas columnas tengan el mismo ancho */
-  padding: 10px; /* Espaciado interno para las columnas */
-  border: 1px solid #ccc; /* Borde opcional para visualización */
-  width: 20%;
-}
 .img-portfolio{
   object-fit:contain;
-  width: 40%;
-  height: 60%;
+  width: 100%;
+  height: 50%;
   display: block;
   margin-bottom: 15px;
   box-shadow: 0 0 6px rgba(0, 0, 0, .5);
@@ -384,6 +382,11 @@ footer{
   }
 }
 @media screen and (max-width: 500px){
+  .contenedor-objetivos{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; /* Alinea los elementos en una columna */
+  }
   .menu-navegacion{
     width: 60%;
   }
