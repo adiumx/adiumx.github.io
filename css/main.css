@@ -140,6 +140,7 @@ header{
   flex-direction: row; /* Alinea los elementos en una columna */
   justify-content: space-around;
 }
+
 .column{
   flex: 1;
   padding: 20px;
