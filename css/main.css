@@ -27,8 +27,17 @@ body {
   font-size: 48px;
   padding: 20px;
 }
-header{
-  height: 100vh;
+.header{
+  height: 120vh;
+  background-image: linear-gradient(to top, rgba(161, 140, 209, 0.507) 0%, rgba(251, 194, 235, 0.527) 100%), url(../img/portada.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  
+}
+.header2{
+  height: 20vh;
   background-image: linear-gradient(to top, rgba(161, 140, 209, 0.507) 0%, rgba(251, 194, 235, 0.527) 100%), url(../img/portada.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -44,11 +53,23 @@ header{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 70vh;            /* Altura del contenedor padre */
+  height: 90vh;            /* Altura del contenedor padre */
   color: #fff;
 }
 
-
+.svg-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 10px;
+  transition: transform 0.2s ease;
+}
+.svg-button:hover {
+  transform: scale(1.1);
+}
+.svg-button:focus {
+  outline: none;
+}
 .menu-navegacion{
   position: fixed;
   top: 0;
@@ -148,7 +169,9 @@ header{
   border: 1px solid #ccc;
   text-align: center;
 }
-
+.parrafo {
+  margin-bottom: 20px; /* Ajusta el valor según la separación que desees */
+}
 .title {
   text-align: center; /* Centra el texto del título */
   font-size: 24px; /* Tamaño de fuente del título */
