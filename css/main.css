@@ -37,7 +37,8 @@ body {
   
 }
 .header2{
-  height: 20vh;
+  height: auto; /* Cambia "20vh" si no es necesario un tamaño proporcional */
+  max-height: 200px; /* Limita la altura máxima a 100 píxeles */
   background-image: linear-gradient(to top, rgba(161, 140, 209, 0.507) 0%, rgba(251, 194, 235, 0.527) 100%), url(../img/portada.jpg);
   background-repeat: no-repeat;
   background-size: cover;
