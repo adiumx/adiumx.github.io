@@ -1,9 +1,9 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-font-family: system-ui, sans-serif;
-color: #222;
-background: #f5f5f5;
+  font-family: system-ui, sans-serif;
+  color: #e2e8f0;
+  background: #0f172a; /* azul marino oscuro, no negro puro */
 }
 
 /* ======== GRID: estructura general de la página ======== */
@@ -27,10 +27,11 @@ background: #f5f5f5;
 .contact  { grid-area: contact; }
 .projects { grid-area: projects; }
 .cell {
-background: #fff;
-border: 1px solid #ddd;
-border-radius: 8px;
-padding: 1.5rem;
+  background: #1e293b; /* un tono más claro que el body, para dar profundidad */
+  border: 1px solid #334155;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  -radius: 8px;
+  padding: 1.5rem;
 }
 
 /* Responsive: en móvil, todo en una sola columna */
@@ -70,7 +71,8 @@ gap: 0.5rem;
 }
 
 .skills li {
-background: #eee;
+background: #334155;
+color: #e2e8f0;
 padding: 0.3rem 0.8rem;
 border-radius: 999px;
 font-size: 0.9rem;
@@ -105,14 +107,31 @@ gap: 1rem;
   display: inline-block;
   text-align: center;
   text-decoration: none;
-  background: #222;
-  color: #fff;
+  background: #fbbf24;
+  color: #0f172a; /* texto oscuro sobre botón claro, buen contraste */
   padding: 0.6rem 1rem;
   border-radius: 6px;
   font-size: 0.9rem;
   margin-top: auto;
 }
 
+h1, h2, h3 {
+  color: #f8fafc;
+}
+
+/* Acento cálido para lo interactivo */
+.header nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+.header nav a:hover {
+  color: #fbbf24; /* ámbar, contraste cálido contra el azul frío */
+}
+
 .btn-ver:hover {
-  background: #444;
+  background: #f59e0b;
+}
+
+.contact .links a {
+  color: #fbbf24;
 }
