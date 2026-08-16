@@ -1,0 +1,76 @@
+body{
+    background-color: #55625b;
+}
+#tablero {
+    display: grid;
+    
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(3, 200px);
+    
+    justify-content: center; /* centra horizontalmente */
+    align-content: center;   /* centra verticalmente si tiene altura */
+    
+    gap: 5px;
+    margin: 20px;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+}
+.celda {
+    width: 200px;
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("img/celda.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: 0.2s;
+}
+
+.celda:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+.x{
+    background-image:
+        url("img/x.png"),
+        url("img/celda.png");
+
+    background-size:
+        50%,
+        contain;
+
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.o{
+    background-image:
+        url("img/o.png"),
+        url("img/celda.png");
+
+    background-size:
+        50%,
+        contain;
+
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#reiniciar {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: rgb(105, 141, 95);
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+}

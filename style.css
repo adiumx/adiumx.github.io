@@ -1,0 +1,118 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+font-family: system-ui, sans-serif;
+color: #222;
+background: #f5f5f5;
+}
+
+/* ======== GRID: estructura general de la página ======== */
+.page {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "header header header header"
+    "about  about  skills skills"
+    "projects projects projects projects"
+    "contact contact contact contact";
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header   { grid-area: header; }
+.about    { grid-area: about; }
+.skills   { grid-area: skills; }
+.contact  { grid-area: contact; }
+.projects { grid-area: projects; }
+.cell {
+background: #fff;
+border: 1px solid #ddd;
+border-radius: 8px;
+padding: 1.5rem;
+}
+
+/* Responsive: en móvil, todo en una sola columna */
+@media (max-width: 700px) {
+  .page {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "about"
+      "skills"
+      "projects"
+      "contact";
+  }
+}
+
+/* ======== FLEXBOX: alinear elementos dentro de cada celda ======== */
+.header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.header nav {
+display: flex;
+gap: 1.5rem;
+}
+
+.skills ul {
+list-style: none;
+display: flex;
+flex-wrap: wrap;
+gap: 0.5rem;
+}
+
+.skills li {
+background: #eee;
+padding: 0.3rem 0.8rem;
+border-radius: 999px;
+font-size: 0.9rem;
+}
+
+.project-card {
+display: flex;
+flex-direction: column;
+gap: 0.5rem;
+height: 100%;
+}
+
+.project-card .tags {
+display: flex;
+gap: 0.5rem;
+margin-top: auto;
+}
+
+.contact {
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 1rem;
+}
+
+.contact .links {
+display: flex;
+gap: 1rem;
+}
+.btn-ver {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  background: #222;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+.btn-ver:hover {
+  background: #444;
+}
