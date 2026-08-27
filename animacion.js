@@ -27,7 +27,7 @@ function initScrollSnap({
   let current = 0;
   let isScrolling = false;
   let lastWheelTime = 0;
-
+  let touchStartY = 0;
   function cacheOffsets() {
     offsets = sections.map((s) => s.offsetTop);
   }
@@ -60,7 +60,23 @@ function initScrollSnap({
 
     requestAnimationFrame(step);
   }
+  function onTouchStart(e) {
+    touchStartY = e.touches[0].clientY;
+  }
 
+  function onTouchEnd(e) {
+    if (isScrolling) return;
+    const touchEndY = e.changedTouches[0].clientY;
+    const diff = touchStartY - touchEndY;
+
+    if (Math.abs(diff) < 50) return; // umbral mínimo para considerarlo swipe intencional
+
+    if (diff > 0) {
+      scrollToSection(current + 1); // swipe hacia arriba = avanza
+    } else {
+      scrollToSection(current - 1); // swipe hacia abajo = retrocede
+    }
+  }
   function onWheel(e) {
     e.preventDefault();
     const now = performance.now();
@@ -107,6 +123,11 @@ function initScrollSnap({
   window.addEventListener('keydown', onKeydown);
   window.addEventListener('resize', onResize);
 
+  window.addEventListener('wheel', onWheel, { passive: false });
+  window.addEventListener('keydown', onKeydown);
+  window.addEventListener('resize', onResize);
+  window.addEventListener('touchstart', onTouchStart, { passive: true });
+  window.addEventListener('touchend', onTouchEnd, { passive: true });
   const links = document.querySelectorAll(linkSelector);
   links.forEach((link) => link.addEventListener('click', onLinkClick));
 
@@ -118,6 +139,8 @@ function initScrollSnap({
       window.removeEventListener('wheel', onWheel);
       window.removeEventListener('keydown', onKeydown);
       window.removeEventListener('resize', onResize);
+      window.removeEventListener('touchstart', onTouchStart);
+      window.removeEventListener('touchend', onTouchEnd);
       links.forEach((link) => link.removeEventListener('click', onLinkClick));
     }
   };
