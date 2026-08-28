@@ -86,9 +86,11 @@ a{
   display: flex;
   flex-direction: column; /* alterna a vertical */
   /* background-color: rgb(175, 8, 175); */
+  min-width: 0;
+  min-height: 0;
 }
 #grid2-1{
-  flex: 1.618;
+  flex: 1;
   /* background-color: aqua; */
   min-width: 0;
   min-height: 0;
@@ -99,6 +101,8 @@ a{
   display: flex;
   flex-direction: row-reverse; /* alterna a vertical */
   /* background-color: rgb(175, 8, 175); */
+   /* min-width: 0;
+  min-height: 0; */
 }
 #grid3-1{
   flex: 1.618;
@@ -109,14 +113,14 @@ a{
 #grid3-2{
   flex: 1;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column-reverse; 
   /* background-color: rgb(205, 120, 16); */
 }
 #grid4-1{
   flex: 1.618;
   /* background-color: rgb(76, 188, 66); */
-  min-width: 0;
-  min-height: 0;
+  /* min-width: 0;
+  min-height: 0; */
 }
 #grid4-2{
   flex: 1;
@@ -225,10 +229,11 @@ path:not(#Vector\ 1) {
   /* cada item en línea */
 }
 .foto-wrapper {
+  position: relative; /* referencia para el overlay */
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-radius: 50%; /* óvalo, no círculo, porque el contenedor ya no es cuadrado */
+  border-radius: 50%;
 }
 
 .foto-wrapper img {
@@ -236,3 +241,44 @@ path:not(#Vector\ 1) {
   height: 100%;
   object-fit: cover;
 }
+
+.tech-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: max-content;
+  grid-auto-rows: min-content;
+  align-content: center;
+  justify-content: center;
+  gap: 0.5rem;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.tech-overlay span {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+}
+
+.html-text {
+  margin-left: 1rem; /* desplaza HTML hacia la derecha */
+}
+
+.js-text {
+  margin-left: 0rem; /* desplaza JS hacia la izquierda */
+}
+.foto-wrapper:hover .tech-overlay {
+  opacity: 0;
+}
+#grid1-1 .tech-overlay { background-color: #0A1833; }
+#grid2-1 .tech-overlay { background-color: #293D66; }
+#grid3-1 .tech-overlay { background-color: #5C7099; }
+#grid4-1 .tech-overlay { background-color: #A3B1CC; }
+#grid4-2 .tech-overlay { background-color: #b5c7ea; }
