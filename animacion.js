@@ -151,3 +151,62 @@ document.addEventListener('DOMContentLoaded', () => {
     duration: 900
   });
 });
+
+//social rows
+// Redes / contacto — edita este arreglo para agregar, quitar o reordenar
+    const items = [
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/cesar-ruiz-f/" },
+      { label: "GitHub",   href: "https://github.com/adiumx" },
+      { label: "Email",    href: "mailto:cesar.ruiz.f@gmail.com" }
+    ];
+
+    const list = document.getElementById('list');
+
+    items.forEach((item, i) => {
+      const row = document.createElement('a');
+      row.href = item.href;
+      row.className = 'row';
+      if (item.href.startsWith('http')) {
+        row.target = '_blank';
+        row.rel = 'noopener noreferrer';
+      }
+
+      const index = String(i + 1).padStart(2, '0');
+
+      // Contenido default (visible sin hover)
+      const defaultLayer = document.createElement('div');
+      defaultLayer.className = 'row-default';
+      defaultLayer.innerHTML = `
+        <div class="left">
+        
+          <span class="row-label">${item.label}</span>
+        </div>
+        
+      `;
+
+      // Capa marquee (se revela en hover, llena la fila con el nombre repetido)
+      const marqueeLayer = document.createElement('div');
+      marqueeLayer.className = 'row-marquee';
+      const track = document.createElement('div');
+      track.className = 'marquee-track';
+
+      // Repetimos el nombre suficientes veces + set duplicado para loop infinito
+      const repeated = Array(10).fill(item.label);
+      function buildWords() {
+        const frag = document.createDocumentFragment();
+        repeated.forEach(word => {
+          const span = document.createElement('span');
+          span.className = 'marquee-word';
+          span.innerHTML = `${word}<span class="dot"></span>`;
+          frag.appendChild(span);
+        });
+        return frag;
+      }
+      track.appendChild(buildWords());
+      track.appendChild(buildWords());
+      marqueeLayer.appendChild(track);
+
+      row.appendChild(marqueeLayer);
+      row.appendChild(defaultLayer);
+      list.appendChild(row);
+    });

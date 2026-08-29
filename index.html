@@ -11,12 +11,13 @@
 <body>
   <nav class="navbar">
     <ul>
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about_me">About Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
-  <section id="inicio" class="pantalla">
+  <section id="home" class="pantalla">
     <div class="hero-title">
       <svg width="1440" height="1024" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="1440" height="1024" fill="#1E1E1E" />
@@ -43,8 +44,14 @@
       </svg>
     </div>
   </section>
+<section id="about_me" class=" pantalla">
+<div class="grid-container">
+  <div class="vertical-img"></div>
+</div>
+<p>Originario de Puebla y egresado de la BUAP en Ciencias de la Computación. Mi perfil combina el desarrollo web con un enfoque creativo en diseño de interfaces, aplicando retículas y principios visuales claros. Al mismo tiempo, me apasiona la inteligencia artificial: actualmente trabajo en un asistente de voz que detecta una palabra de activación y silencios para interactuar con modelos de lenguaje. Además de mi formación técnica, disfruto la música y el dibujo, que me inspiran a mantener un estilo funcional y estético en mis proyectos.</p>
 
-  <section id="proyectos" class="pantalla">
+</section>
+  <section id="projects" class="pantalla">
     <div id="grid1">
       <!-- tic tac toe/index.html -->
       <div id="grid1-1"><a href="#">
@@ -108,10 +115,9 @@
     </div>
   </section>
 
-  <section id="contacto" class="pantalla">
+  <section id="contact" class="pantalla">
     <div class="grid">
-      <div>Proyecto 1</div>
-      <div>Proyecto 2</div>
+      <div class="list" id="list"></div>
     </div>
   </section>
   <script src="animacion.js"></script>

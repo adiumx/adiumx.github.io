@@ -34,7 +34,21 @@ section {
   padding: 2rem;
 }
 
-.proyectos .grid {
+#contact.pantalla {
+  min-height: 100vh;
+  height: auto;
+  display: block;
+  padding-top: 120px;
+  padding-bottom: 2rem;
+}
+
+#contact .grid {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.projects .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   /* dos columnas */
@@ -55,11 +69,10 @@ img {
   width: 100%;
   height: 100%;
 }
-a{
-  display: block;
-  height: 100%
+a {
+  text-decoration: none;
 }
-#proyectos {
+#projects {
   box-sizing: border-box;
   justify-content: flex-start;
   padding-top: 86px;
@@ -282,3 +295,183 @@ path:not(#Vector\ 1) {
 #grid3-1 .tech-overlay { background-color: #5C7099; }
 #grid4-1 .tech-overlay { background-color: #A3B1CC; }
 #grid4-2 .tech-overlay { background-color: #b5c7ea; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 columnas iguales */
+  gap: 20px;
+  height: 100%; /* ocupa toda la altura disponible de la sección */
+  width: 100%;
+  /* background-color: red; */
+
+}
+
+#about_me {
+  padding: 0;
+}
+
+.vertical-img {
+  grid-column: 2 / 5;
+  grid-row: 1 / -1;
+  /* background-color: red; */
+background-image: url('about_me.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;   /* ocupa todo el alto disponible */
+  /* background-color: red; */
+
+}
+/* social rows */
+
+  :root {
+    --black: #0A0A0A;
+    --white: #FFFFFF;
+    --red: #FF0000;
+    --gray: #8A8A8A;
+    --row-height: 160px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--white);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+  }
+
+.list {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  border-top: 2px solid var(--black);
+}
+  /* ===== ROW ===== */
+  .row {
+    position: relative;
+    width: 100%;
+    height: var(--row-height);
+    border-bottom: 2px solid var(--black);
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* --- default state content --- */
+  .row-default {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  background: var(--white);
+  opacity: 1;
+  transition: opacity 0.5s ease;   /* antes: transition: transform 0.5s ... */
+  z-index: 2;
+}
+
+
+
+  .row-default .left {
+    display: flex;
+    align-items: baseline;
+    gap: 28px;
+  }
+
+  .row-index {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+  }
+
+  .row-label {
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--black);
+  }
+
+  .row-arrow {
+    font-size: clamp(24px, 3vw, 40px);
+    color: var(--black);
+    transition: transform 0.4s ease;
+  }
+
+  .row:hover .row-arrow {
+    transform: translate(6px, -6px) rotate(45deg);
+  }
+
+.row:hover .row-default {
+  opacity: 0;                       /* antes: transform: translateY(-100%); */
+}
+
+  /* --- marquee reveal state --- */
+.row-marquee {
+  position: absolute;
+  inset: 0;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;   /* antes: transition: transform 0.5s ... */
+  z-index: 1;
+}
+
+.row:hover .row-marquee {
+  opacity: 1;                       /* antes: transform: translateY(0); */
+}
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+    animation-play-state: paused;
+  }
+
+  .row:hover .marquee-track {
+    animation-play-state: running;
+  }
+
+  .marquee-word {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--black);
+    padding: 0 32px;
+  }
+
+  .marquee-word .dot {
+    width: 10px;
+    height: 10px;
+    background: var(--red);
+    border-radius: 50%;
+    margin-left: 32px;
+    flex-shrink: 0;
+  }
+
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  @media (max-width: 640px) {
+    :root { --row-height: 110px; }
+    .row-default { padding: 0 24px; }
+    .row-default .left { gap: 16px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track,
+    .row-default,
+    .row-marquee,
+    .row-arrow { animation: none !important; transition: none !important; }
+  }
+
