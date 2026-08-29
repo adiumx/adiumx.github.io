@@ -475,3 +475,82 @@ background-image: url('about_me.png');
     .row-arrow { animation: none !important; transition: none !important; }
   }
 
+/* Descripción que reemplaza la foto en hover */
+.project-description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  background: inherit; /* usa el mismo color que .tech-overlay del padre */
+  z-index: 2;
+}
+
+.project-description p {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: white;
+  text-align: center;
+  max-width: 85%;
+}
+
+/* La imagen original se oculta en hover, y la descripción aparece */
+.foto-wrapper:hover img {
+  opacity: 0;
+}
+
+.foto-wrapper:hover .project-description {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.foto-wrapper img {
+  transition: opacity 0.4s ease;
+}
+
+/* Necesita fondo detrás para que .project-description se vea aunque la img desaparezca */
+.foto-wrapper {
+  background-color: #0A1833; /* fallback, se sobreescribe por cada burbuja abajo si quieres variar */
+}
+
+/* Que cada .project-description tome el color correspondiente a su burbuja */
+#grid1-1 .project-description { background-color: #0A1833; }
+#grid2-1 .project-description { background-color: #293D66; }
+#grid3-1 .project-description { background-color: #5C7099; }
+#grid4-1 .project-description { background-color: #A3B1CC; }
+#grid4-2 .project-description { background-color: #b5c7ea; }
+
+/* ===== IMAGEN FLOTANTE QUE SIGUE AL MOUSE ===== */
+#cursor-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 280px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(45deg) scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+#cursor-preview.is-visible {
+  opacity: 1;
+  transform: translate(-40%, -110%) rotate(0deg) scale(1);
+}
+
+#cursor-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

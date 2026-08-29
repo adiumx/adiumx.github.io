@@ -210,3 +210,31 @@ document.addEventListener('DOMContentLoaded', () => {
       row.appendChild(defaultLayer);
       list.appendChild(row);
     });
+
+    // hover
+    document.addEventListener('DOMContentLoaded', () => {
+  const cursorPreview = document.getElementById('cursor-preview');
+  const cursorImg = cursorPreview.querySelector('img');
+  const projectLinks = document.querySelectorAll('.project-link');
+
+  let mouseX = 0, mouseY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursorPreview.style.left = `${mouseX}px`;
+    cursorPreview.style.top = `${mouseY}px`;
+  });
+
+  projectLinks.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      const imgSrc = link.getAttribute('data-img');
+      cursorImg.src = imgSrc;
+      cursorPreview.classList.add('is-visible');
+    });
+
+    link.addEventListener('mouseleave', () => {
+      cursorPreview.classList.remove('is-visible');
+    });
+  });
+});
