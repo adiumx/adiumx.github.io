@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #337DAB 0%, #1A1A1A 50%, #6B7A4E 100%);
+  padding: 3rem 2rem;
+}
+
+#cards-container,
+#cards-container1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  /* max-width y margin ya no van aquí, los maneja .seccion */
+}
+
+.card {
+  /* Glassmorphism */
+  background: rgba(245, 241, 232, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 241, 232, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+
+  width: 220px;
+  padding: 1rem;
+  text-align: center;
+  color: #F5F1E8;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(51, 125, 171, 0.35);
+  border-color: rgba(51, 125, 171, 0.5);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 0.8rem;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+  color: #F5F1E8;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #B8B2A0;
+}
+
+.card p.estado-vivo {
+  color: #6B7A4E;
+  font-weight: 600;
+}
+
+.card p.estado-muerto {
+  color: #C42727;
+  font-weight: 600;
+}
+
+.card p.estado-desconocido {
+  color: #B8B2A0;
+}
+
+/* titulos */
+
+.seccion {
+  max-width: 1200px;
+  margin: 0 auto 4rem auto;
+}
+
+.titulo-seccion {
+  color: #F5F1E8;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+/* Línea decorativa debajo del título, con tu color de acento */
+.titulo-seccion::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #337DAB;
+  border-radius: 2px;
+}
