@@ -28,11 +28,20 @@ fetch('https://rickandmortyapi.com/api/location/3')
           const cardResidente = document.createElement('div');
           cardResidente.classList.add('card');
           cardResidente.innerHTML = `
-            <img src="${personaje.image}" alt="${personaje.name}">
+            <img src="${personaje.image}" alt="${personaje.name}" loading="lazy">
             <h3>${personaje.name}</h3>
           `;
+
+          // Fallback si la imagen no carga (icono roto)
+          const img = cardResidente.querySelector('img');
+          img.addEventListener('error', () => {
+            img.onerror = null; // evita loop infinito si el fallback también falla
+            img.src = 'https://rickandmortyapi.com/api/character/avatar/1.jpeg';
+          }, { once: true });
+
           container.appendChild(cardResidente);
         });
-      });
+      })
+      .catch(error => console.log('Error al cargar personajes:', error));
   })
-  .catch(error => console.log(error));
+  .catch(error => console.log('Error al cargar location:', error));
