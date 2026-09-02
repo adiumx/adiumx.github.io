@@ -167,7 +167,9 @@
   #home {
     background: #FFFFFF;
   }
-
+#home.pantalla {
+  position: relative; /* 👈 agrega esto */
+}
   .hero-title {
     display: flex;
     justify-content: center;
@@ -813,4 +815,51 @@
     padding: 0.7rem 1.1rem;
     font-size: 0.85rem;
   }
+}
+
+/* tech tags */
+.tech-tags {
+  position: absolute;
+  top: var(--navbar-height); /* 👈 en vez de inset: 0 */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 60;
+}
+
+.tag {
+  position: absolute;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300; /* Inter Light, delgada */
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+.tag-top-left {
+  top: 40px;
+  left: 40px;
+}
+
+.tag-top-right {
+  top: 40px;
+  right: 40px;
+}
+
+.tag-bottom-left {
+  bottom: 40px;
+  left: 40px;
+}
+
+.tag-bottom-right {
+  bottom: 100px;
+  right: 40px;
+}
+
+.tag-mid-right {
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
 }
