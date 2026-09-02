@@ -123,7 +123,14 @@ contactItems.forEach((item) => {
   row.appendChild(defaultLayer);
   list.appendChild(row);
 });
-
+// ===== Precarga de imágenes de proyectos =====
+document.querySelectorAll('.project-link').forEach((link) => {
+  const src = link.getAttribute('data-img');
+  if (src) {
+    const preload = new Image();
+    preload.src = src;
+  }
+});
 // ===== PROJECTS: vista previa flotante que sigue al mouse =====
 const cursorPreview = document.getElementById('cursor-preview');
 if (cursorPreview) {
