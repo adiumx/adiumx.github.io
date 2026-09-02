@@ -166,3 +166,12 @@ container.addEventListener('touchend', (e) => {
     }
   }
 }, { passive: true });
+
+function actualizarAlturaNavbar() {
+  const navbar = document.querySelector('.navbar');
+  const altura = navbar.offsetHeight;
+  document.documentElement.style.setProperty('--navbar-height', altura + 'px');
+}
+
+actualizarAlturaNavbar();
+window.addEventListener('resize', actualizarAlturaNavbar);
