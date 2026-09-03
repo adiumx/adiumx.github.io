@@ -221,7 +221,7 @@ const themeToggle = document.getElementById('themeToggle');
 const langToggle = document.getElementById('langToggle');
 
 let idioma = localStorage.getItem('portfolio-lang') || 'es';
-let tema = localStorage.getItem('portfolio-theme') || 'light';
+let tema = localStorage.getItem('portfolio-theme') || 'dark';
 
 function aplicarTema() {
   document.body.classList.toggle('dark', tema === 'dark');
