@@ -12,10 +12,12 @@
 
   <nav class="navbar">
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about_me">About Me</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#home" data-i18n="nav_home">Home</a></li>
+      <li><a href="#about_me" data-i18n="nav_about">About Me</a></li>
+      <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+      <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+      <li><button type="button" id="themeToggle" class="nav-btn" aria-label="Cambiar tema">Light</button></li>
+      <li><button type="button" id="langToggle" class="nav-btn" aria-label="Cambiar idioma">EN</button></li>
     </ul>
   </nav>
 
@@ -51,8 +53,8 @@
       <div class="about-grid">
         <div class="about-img"></div>
         <h1 class="about-title">DEVELOPER<br>WEB<span class="punto">•</span>AI</h1>
-        <h3 class="about-subtitle">Biography</h3>
-        <p class="about-bio">Originario de Puebla y egresado de la BUAP en Ciencias de la Computación. Mi perfil combina
+        <h3 class="about-subtitle" data-i18n="bio_title">Biography</h3>
+        <p class="about-bio" data-i18n="bio_text">Originario de Puebla y egresado de la BUAP en Ciencias de la Computación. Mi perfil combina
           el desarrollo web con un enfoque creativo en diseño de interfaces, aplicando retículas y principios visuales
           claros. Al mismo tiempo, me apasiona la inteligencia artificial: actualmente trabajo en un asistente de voz
           que detecta una palabra de activación y silencios para interactuar con modelos de lenguaje. Además de mi
@@ -73,7 +75,7 @@
             
           </div>
           <div class="project-description">
-            <p>Proyecto integrador</p>
+            <p data-i18n="p1">Proyecto integrador</p>
           </div>
         </div>
       </a>
@@ -89,7 +91,7 @@
               <span>CSS</span>
             </div>
             <div class="project-description">
-              <p>
+              <p data-i18n="p2">
 Tecnologías: JavaScript, Fetch API
 Usé la Fetch API para realizar solicitudes HTTP y obtener datos en formato JSON desde la API pública de Rick and Morty. Con ayuda de una IA generé el código base, lo adapté y aprendí a manejar promesas, errores y a mostrar resultados dinámicos en la interfaz.</p>
             </div>
@@ -135,7 +137,7 @@ Usé la Fetch API para realizar solicitudes HTTP y obtener datos en formato JSON
                   <span>JS</span>
                 </div>
                 <div class="project-description">
-                  <p>Juego de Tic Tac Toe con lógica de turnos, detección de victoria y diseño responsivo.</p>
+                  <p data-i18n="p3">Juego de Tic Tac Toe con lógica de turnos, detección de victoria y diseño responsivo.</p>
                 </div>
               </div>
             </a>
@@ -157,7 +159,7 @@ Usé la Fetch API para realizar solicitudes HTTP y obtener datos en formato JSON
   <!-- Fuera de .scroll-container a propósito: si estuviera adentro, el transform
        del scroll lo convertiría en "fixed" relativo al contenedor, no a la pantalla -->
   <a href="César Ruiz flores.pdf" download class="cv-button">
-  Descargar CV <span class="cv-dot">•</span>
+  <span data-i18n="cv">Descargar CV</span> <span class="cv-dot">•</span>
 </a>
   <div id="cursor-preview">
     <img src="" alt="">

@@ -182,3 +182,76 @@ function actualizarAlturaNavbar() {
 
 actualizarAlturaNavbar();
 window.addEventListener('resize', actualizarAlturaNavbar);
+
+// ===== MODO OSCURO =====
+const TRADUCCIONES = {
+  es: {
+    nav_home: 'Inicio',
+    nav_about: 'Sobre mí',
+    nav_projects: 'Proyectos',
+    nav_contact: 'Contacto',
+    bio_title: 'Biografía',
+    bio_text: 'Originario de Puebla y egresado de la BUAP en Ciencias de la Computación. Mi perfil combina el desarrollo web con un enfoque creativo en diseño de interfaces, aplicando retículas y principios visuales claros. Al mismo tiempo, me apasiona la inteligencia artificial: actualmente trabajo en un asistente de voz que detecta una palabra de activación y silencios para interactuar con modelos de lenguaje. Además de mi formación técnica, disfruto la música y el dibujo, que me inspiran a mantener un estilo funcional y estético en mis proyectos.',
+    p1: 'Proyecto integrador',
+    p2: 'Tecnologías: JavaScript, Fetch API. Usé la Fetch API para realizar solicitudes HTTP y obtener datos en formato JSON desde la API pública de Rick and Morty. Con ayuda de una IA generé el código base, lo adapté y aprendí a manejar promesas, errores y a mostrar resultados dinámicos en la interfaz.',
+    p3: 'Juego de Tic Tac Toe con lógica de turnos, detección de victoria y diseño responsivo.',
+    cv: 'Descargar CV',
+    tema_oscuro: 'Oscuro',
+    tema_claro: 'Claro',
+    idioma: 'EN'
+  },
+  en: {
+    nav_home: 'Home',
+    nav_about: 'About Me',
+    nav_projects: 'Projects',
+    nav_contact: 'Contact',
+    bio_title: 'Biography',
+    bio_text: 'Born in Puebla and a Computer Science graduate from BUAP. My profile combines web development with a creative approach to interface design, applying grids and clear visual principles. At the same time, I am passionate about artificial intelligence: I am currently building a voice assistant that detects a wake word and silences in order to interact with language models. Beyond my technical background, I enjoy music and drawing, which inspire me to keep a functional and aesthetic style in my projects.',
+    p1: 'Capstone project',
+    p2: 'Tech: JavaScript, Fetch API. I used the Fetch API to make HTTP requests and get JSON data from the public Rick and Morty API. With help from an AI I generated the base code, adapted it, and learned to handle promises, errors and render dynamic results in the interface.',
+    p3: 'Tic Tac Toe game with turn logic, win detection and responsive design.',
+    cv: 'Download CV',
+    tema_oscuro: 'Dark',
+    tema_claro: 'Light',
+    idioma: 'ES'
+  }
+};
+
+const themeToggle = document.getElementById('themeToggle');
+const langToggle = document.getElementById('langToggle');
+
+let idioma = localStorage.getItem('portfolio-lang') || 'es';
+let tema = localStorage.getItem('portfolio-theme') || 'light';
+
+function aplicarTema() {
+  document.body.classList.toggle('dark', tema === 'dark');
+  if (themeToggle) {
+    const t = TRADUCCIONES[idioma];
+    themeToggle.textContent = tema === 'dark' ? t.tema_claro : t.tema_oscuro;
+  }
+}
+
+function aplicarIdioma() {
+  const t = TRADUCCIONES[idioma];
+  document.documentElement.lang = idioma;
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const clave = el.getAttribute('data-i18n');
+    if (t[clave]) el.textContent = t[clave];
+  });
+  if (langToggle) langToggle.textContent = t.idioma;
+  aplicarTema();
+}
+
+themeToggle?.addEventListener('click', () => {
+  tema = tema === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('portfolio-theme', tema);
+  aplicarTema();
+});
+
+langToggle?.addEventListener('click', () => {
+  idioma = idioma === 'es' ? 'en' : 'es';
+  localStorage.setItem('portfolio-lang', idioma);
+  aplicarIdioma();
+});
+
+aplicarIdioma();

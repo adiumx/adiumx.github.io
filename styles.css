@@ -929,3 +929,99 @@
     margin-bottom: 1rem;
   }
 }
+
+/* ===== BOTONES NAVBAR (tema / idioma) ===== */
+.nav-btn {
+  background: none;
+  border: none;
+  padding: 0 0 8px 0;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  color: black;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  white-space: nowrap;
+  text-transform: none;
+  transition: color 0.3s ease;
+}
+
+.nav-btn:hover {
+  color: gray;
+}
+
+.nav-btn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: var(--black, #0A0A0A);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-btn:hover::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 480px) {
+  .nav-btn { font-size: 0.8rem; }
+}
+
+@media (max-width: 400px) {
+  .nav-btn { font-size: 0.7rem; }
+}
+
+/* ===== MODO OSCURO ===== */
+body.dark {
+  --black: #F5F5F5;
+  --white: #0A0A0A;
+  background: #0A0A0A;
+}
+
+body.dark .navbar {
+  background-color: #0A0A0A;
+  border-bottom-color: #F5F5F5;
+}
+
+body.dark .navbar a,
+body.dark .nav-btn {
+  color: #F5F5F5;
+}
+
+body.dark .navbar a:hover,
+body.dark .nav-btn:hover {
+  color: #8A8A8A;
+}
+
+body.dark #home {
+  background: #0A0A0A;
+}
+
+body.dark .hero-title svg rect {
+  fill: #0A0A0A;
+}
+
+body.dark .hero-title svg path {
+  fill: #F5F5F5;
+}
+
+body.dark .row-default,
+body.dark .row-marquee {
+  background: #0A0A0A;
+}
+
+body.dark .cv-button {
+  background: #F5F5F5;
+  color: #0A0A0A;
+  border-color: #F5F5F5;
+}
+
+body.dark .cv-button:hover {
+  background: #0A0A0A;
+  color: #F5F5F5;
+}
