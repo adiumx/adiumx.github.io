@@ -266,15 +266,12 @@
     margin: 0;
   }
 
-  .about-bio {
+  .about-copy {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
-    /* usa Inter-Light.woff2 */
     grid-column: 6 / 11;
     grid-row: 7 / 13;
     align-self: start;
-    margin: 0 0 4vh 0;
-    font-weight: 300;
     font-size: clamp(15px, 1.4vw, 19px);
     line-height: 1.6;
     max-width: 60ch;
@@ -282,7 +279,14 @@
 
     border-top: 2px solid var(--black, #0A0A0A);
     padding-top: 1.5rem;
-    /* separa el texto de la línea */
+  }
+
+  .about-copy p {
+    margin: 0 0 1rem;
+  }
+
+  .about-copy p:last-child {
+    margin-bottom: 0;
   }
 
   @media (max-width: 768px) {
@@ -333,12 +337,13 @@
       margin: 0.25rem 0 0 0;
     }
 
-    .about-bio {
+    .about-copy {
       grid-column: 1 / 13;
       grid-row: 4 / 5;
-      /* antes: 3/4 — ahora va DESPUÉS del subtítulo */
       font-size: clamp(14px, 3.5vw, 16px);
-      /* un poco más chico para caber mejor */
+      line-height: 1.45;
+      padding-top: 0.75rem;
+      margin-bottom: 1rem;
     }
   }
 
@@ -816,8 +821,29 @@
   z-index: 60;
 }
 
-.tag {
+.tech-group {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.tech-group-data {
+  top: 5vh;
+  left: 4vw;
+  padding-right: 3vw;
+  border-right: 1px solid rgba(10, 10, 10, 0.2);
+}
+
+.tech-group-dev {
+  right: 4vw;
+  bottom: 10vh;
+  align-items: flex-end;
+  opacity: 0.62;
+}
+
+.tag {
+  position: static;
   font-family: 'Inter', sans-serif;
   font-weight: 300; /* Inter Light, delgada */
   font-size: 14px;
@@ -826,41 +852,33 @@
   color: var(--black);
 }
 
-.tag-top-left {
-  top: 40px;
-  left: 40px;
-}
-
-.tag-top-right {
-  top: 40px;
-  right: 40px;
-}
-
-.tag-bottom-left {
-  bottom: 40px;
-  left: 40px;
-}
-
-.tag-bottom-right {
-  bottom: 100px;
-  right: 40px;
-}
-
-.tag-mid-right {
-  top: 50%;
-  right: 40px;
-  transform: translateY(-50%);
-}
-
 @media (max-width: 480px) {
   .tech-tags {
     position: static;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    padding: 1.2rem 16px 0;
+    pointer-events: auto;
+  }
+
+  .tech-group {
+    position: static;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
-    padding: 12px 16px 0;
-    pointer-events: auto;
+    gap: 0.55rem 1rem;
+  }
+
+  .tech-group-data {
+    padding: 0 0 0.9rem;
+    border-right: 0;
+    border-bottom: 1px solid rgba(10, 10, 10, 0.2);
+  }
+
+  .tech-group-dev {
+    align-items: center;
   }
 
   .tag {
@@ -920,7 +938,7 @@
     margin: 0.15rem 0 0 0;
   }
 
-  .about-bio {
+  .about-copy {
     grid-column: 1 / 13;
     grid-row: 4 / 5;
     font-size: clamp(13px, 3.2vw, 15px);  /* 👈 un poco más chico */
