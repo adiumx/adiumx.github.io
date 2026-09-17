@@ -145,7 +145,9 @@ if (cursorPreview) {
   projectLinks.forEach((link) => {
     link.addEventListener('mouseenter', () => {
       const imgSrc = link.getAttribute('data-img');
+      const imgPos = link.getAttribute('data-pos') || '50% center';
       cursorImg.src = imgSrc;
+      cursorImg.style.objectPosition = imgPos;
       cursorPreview.classList.add('is-visible');
     });
 
