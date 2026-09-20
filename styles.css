@@ -83,30 +83,91 @@
   transform: scaleX(1);
 }
 
-
-@media (max-width: 480px) {
-  :root {
-    --navbar-height: 64px;
-  }
-  .navbar {
-    gap: 0.9rem;
-    padding: 1rem 0 1.4rem;
-  }
-  .navbar a {
-    font-size: 0.8rem;
-  }
+/* ===== BOTÓN HAMBURGUESA (oculto en escritorio) ===== */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  z-index: 210;
 }
 
-@media (max-width: 400px) {
-  :root {
-    --navbar-height: 58px;
-  }
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: black;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar.nav-open .nav-toggle span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.navbar.nav-open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar.nav-open .nav-toggle span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
   .navbar {
-    gap: 0.5rem;
-    padding: 0.85rem 0 1.25rem;
+    justify-content: flex-end;
+    padding: 1rem 1.25rem;
   }
-  .navbar a {
-    font-size: 0.7rem;
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .navbar ul {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    max-height: calc(100dvh - var(--navbar-height));
+    overflow-y: auto;
+    background-color: white;
+    border-bottom: 1px solid black;
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .navbar.nav-open ul {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .navbar ul li {
+    width: 100%;
+  }
+
+  .navbar ul a,
+  .navbar ul .nav-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .navbar a::after,
+  .nav-btn::after {
+    display: none;
   }
 }
 
@@ -1008,6 +1069,17 @@ body.dark {
 body.dark .navbar {
   background-color: #0A0A0A;
   border-bottom-color: #F5F5F5;
+}
+
+body.dark .nav-toggle span {
+  background: #F5F5F5;
+}
+
+@media (max-width: 768px) {
+  body.dark .navbar ul {
+    background-color: #0A0A0A;
+    border-bottom-color: #F5F5F5;
+  }
 }
 
 body.dark .navbar a,

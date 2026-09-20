@@ -176,6 +176,39 @@ container.addEventListener('touchend', (e) => {
   }
 }, { passive: true });
 
+// ===== NAVBAR: menú hamburguesa en móvil =====
+const navbarEl = document.querySelector('.navbar');
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
+
+function cerrarMenuMovil() {
+  navbarEl.classList.remove('nav-open');
+  navToggle?.setAttribute('aria-expanded', 'false');
+}
+
+navToggle?.addEventListener('click', () => {
+  const abierto = navbarEl.classList.toggle('nav-open');
+  navToggle.setAttribute('aria-expanded', String(abierto));
+});
+
+navMenu?.addEventListener('click', (e) => {
+  if (e.target.closest('a, button')) cerrarMenuMovil();
+});
+
+document.addEventListener('click', (e) => {
+  if (navbarEl.classList.contains('nav-open') && !navbarEl.contains(e.target)) {
+    cerrarMenuMovil();
+  }
+});
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') cerrarMenuMovil();
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) cerrarMenuMovil();
+});
+
 function actualizarAlturaNavbar() {
   const navbar = document.querySelector('.navbar');
   const altura = navbar.offsetHeight;
