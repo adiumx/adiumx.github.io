@@ -18,6 +18,7 @@
       <li><a href="#home" data-i18n="nav_home">Home</a></li>
       <li><a href="#about_me" data-i18n="nav_about">About Me</a></li>
       <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+      <li><a href="#hackathons" data-i18n="nav_hackathons">Hackathons</a></li>
       <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
       <li><button type="button" id="themeToggle" class="nav-btn" aria-label="Cambiar tema">Light</button></li>
       <li><button type="button" id="langToggle" class="nav-btn" aria-label="Cambiar idioma">EN</button></li>
@@ -82,7 +83,7 @@
     <section id="projects" class="pantalla">
       <div id="grid1">
         <div id="grid1-1">
-          <a href="https://github.com/adiumx/airline-sentiment-classifier" class="project-link" data-img="ss1.webp"
+          <a href="https://github.com/adiumx/airline-sentiment-classifier" class="project-link" data-img="imagenes/ss1.webp"
             data-pos="82% center">
             <div class="foto-wrapper">
               <div class="tech-overlay">
@@ -101,7 +102,7 @@
         </div>
         <div id="grid1-2">
           <div id="grid2-1">
-            <a href="#" class="project-link" data-img="mejora_latencia_kokoro.webp" data-pos="89% center">
+            <a href="#" class="project-link" data-img="imagenes/mejora_latencia_kokoro.webp" data-pos="89% center">
               <div class="foto-wrapper">
                 <div class="tech-overlay">
                   <span class="html-text">Whisper</span>
@@ -119,7 +120,7 @@
           </div>
           <div id="grid2-2">
             <div id="grid3-1">
-              <a href="#" class="project-link" data-img="proyecto-humidificador.webp" data-pos="40% center">
+              <a href="#" class="project-link" data-img="imagenes/proyecto-humidificador.webp" data-pos="40% center">
                 <div class="foto-wrapper">
                   <div class="tech-overlay">
                     <span class="html-text">Regresión Lineal</span>
@@ -135,7 +136,7 @@
             </div>
             <div id="grid3-2">
               <div id="grid4-1">
-                <a href="rickymorty/index.html" class="project-link" data-img="proyecto2.webp" data-pos="29% center">
+                <a href="rickymorty/index.html" class="project-link" data-img="imagenes/proyecto2.webp" data-pos="29% center">
                   <div class="foto-wrapper">
                     <div class="tech-overlay">
                       <span>API</span>
@@ -154,7 +155,7 @@
                 </a>
               </div>
               <div id="grid4-2">
-                <a href="tic tac toe/index.html" class="project-link" data-img="tictactoe.webp" data-pos="50% center">
+                <a href="tic tac toe/index.html" class="project-link" data-img="imagenes/tictactoe.webp" data-pos="50% center">
                   <div class="foto-wrapper">
                     <div class="tech-overlay">
                       <span>HTML</span>
@@ -171,6 +172,51 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="hackathons" class="pantalla">
+      <div id="hackathon-grid">
+        <article class="hackathon-card">
+          <div class="hackathon-photos">
+            <img src="imagenes/hackathon-tlaloques-prototipo.webp" alt="Prototipo del detector de fugas de Los Tlaloques"
+              class="active" style="object-position: center top;">
+            <img src="imagenes/hackathon-tlaloques-equipo.webp" alt="Equipo Los Tlaloques en Genius Arena Hackathon">
+            <img src="imagenes/hackathon-genius-arena.webp" alt="Certificado Genius Arena Hackathon - Talent Land México 2026">
+            <div class="hackathon-dots">
+              <button type="button" class="dot active" aria-label="Foto 1: prototipo"></button>
+              <button type="button" class="dot" aria-label="Foto 2: equipo"></button>
+              <button type="button" class="dot" aria-label="Foto 3: certificado"></button>
+            </div>
+          </div>
+          <div class="hackathon-info">
+            <h3>Genius Arena Hackathon</h3>
+            <p class="hackathon-meta">Talent Land México 2026 · 3 días · Equipo de 4 (Los Tlaloques)</p>
+            <p class="hackathon-tags">Arduino Uno Q · Edge Impulse · ML</p>
+            <p class="hackathon-desc">Detector de fugas de agua: cruza huella acústica, presión y flujo para
+              confirmar fugas con inferencia ML local en un Arduino Uno Q.</p>
+          </div>
+        </article>
+
+        <article class="hackathon-card">
+          <div class="hackathon-photos">
+            <img src="imagenes/hackathon-radar-equipo.webp" alt="Equipo Radar en el hackathon Agents, Everywhere de AI Tinkerers"
+              class="active" style="object-position: center 20%;">
+            <img src="imagenes/hackathon-radar-grupo.webp" alt="Foto grupal del hackathon Agents, Everywhere"
+              style="object-position: center 42%;">
+            <div class="hackathon-dots">
+              <button type="button" class="dot active" aria-label="Foto 1: equipo"></button>
+              <button type="button" class="dot" aria-label="Foto 2: foto grupal"></button>
+            </div>
+          </div>
+          <div class="hackathon-info">
+            <h3>Agents, Everywhere Hackathon</h3>
+            <p class="hackathon-meta">AI Tinkerers · CDMX · 12 sep 2026 · Hackathon de 1 día · Equipo Radar (4)</p>
+            <p class="hackathon-tags">OpenRouter · Exa · Ambiguous AI</p>
+            <p class="hackathon-desc">AI Coworker para la app de finanzas Apolo: RADAR detecta riesgo de abandono en
+              feedback y CRM, COMMIT investiga con Exa y arma el flujo de aprobación para retener al cliente.</p>
+          </div>
+        </article>
       </div>
     </section>
 

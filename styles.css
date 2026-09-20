@@ -277,7 +277,7 @@
   .about-img {
     grid-column: 2 / 5;
     grid-row: 1 / 13;
-    background-image: url('about_me.webp');
+    background-image: url('imagenes/about_me.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -759,6 +759,7 @@
     pointer-events: none;
     transition: opacity 0.4s ease;
     background: inherit;
+    overflow-y: auto;
     z-index: 2;
   }
 
@@ -769,6 +770,17 @@
     color: white;
     text-align: center;
     max-width: 85%;
+  }
+
+  @media (max-width: 640px) {
+    .project-description {
+      padding: 1rem;
+    }
+
+    .project-description p {
+      font-size: 0.8rem;
+      max-width: 100%;
+    }
   }
 
   .foto-wrapper:hover img {
@@ -798,6 +810,143 @@
 
   #grid4-2 .project-description {
     background-color: #b5c7ea;
+  }
+
+  /* ===== HACKATHONS (foto siempre visible + carrusel manual) ===== */
+  #hackathon-grid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 420px));
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem 3rem;
+    overflow-y: auto;
+    align-content: start;
+  }
+
+  .hackathon-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #0A1833;
+  }
+
+  .hackathon-card:nth-child(5n+2) { background-color: #293D66; }
+  .hackathon-card:nth-child(5n+3) { background-color: #5C7099; }
+  .hackathon-card:nth-child(5n+4) { background-color: #A3B1CC; }
+  .hackathon-card:nth-child(5n)   { background-color: #b5c7ea; }
+
+  .hackathon-photos {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    max-height: min(34vh, 260px);
+    background-color: #000;
+  }
+
+  .hackathon-photos img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .hackathon-photos img.active {
+    opacity: 1;
+  }
+
+  .hackathon-photos::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 48px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.55));
+    pointer-events: none;
+  }
+
+  .hackathon-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.6rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    z-index: 2;
+  }
+
+  .hackathon-dots .dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+  }
+
+  .hackathon-dots .dot.active {
+    background: #fff;
+  }
+
+  .hackathon-info {
+    padding: 1rem 1.25rem 1.25rem;
+    color: white;
+  }
+
+  .hackathon-info h3 {
+    margin: 0 0 0.25rem;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  .hackathon-meta {
+    margin: 0 0 0.4rem;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .hackathon-tags {
+    margin: 0 0 0.45rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .hackathon-desc {
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  @media (max-width: 640px) {
+    #hackathon-grid {
+      grid-template-columns: minmax(0, 420px);
+      gap: 1.25rem;
+      padding: 1.25rem;
+    }
+
+    .hackathon-info {
+      padding: 0.85rem 1rem 1.1rem;
+    }
+
+    .hackathon-desc {
+      font-size: 0.8rem;
+    }
   }
 
   #cursor-preview {

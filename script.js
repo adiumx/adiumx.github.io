@@ -176,6 +176,18 @@ container.addEventListener('touchend', (e) => {
   }
 }, { passive: true });
 
+// ===== HACKATHONS: carrusel manual de fotos por tarjeta =====
+document.querySelectorAll('.hackathon-card').forEach((card) => {
+  const fotos = card.querySelectorAll('.hackathon-photos img');
+  const puntos = card.querySelectorAll('.dot');
+  puntos.forEach((punto, i) => {
+    punto.addEventListener('click', () => {
+      fotos.forEach((foto, j) => foto.classList.toggle('active', j === i));
+      puntos.forEach((d, j) => d.classList.toggle('active', j === i));
+    });
+  });
+});
+
 // ===== NAVBAR: menú hamburguesa en móvil =====
 const navbarEl = document.querySelector('.navbar');
 const navToggle = document.getElementById('navToggle');
@@ -224,6 +236,7 @@ const TRADUCCIONES = {
     nav_home: 'Inicio',
     nav_about: 'Sobre mí',
     nav_projects: 'Proyectos',
+    nav_hackathons: 'Hackathons',
     nav_contact: 'Contacto',
     bio_title: 'Biografía',
     bio_text: 'Originario de Puebla y egresado de la BUAP en Ciencias de la Computación. Mi perfil combina el desarrollo web con un enfoque creativo en diseño de interfaces, aplicando retículas y principios visuales claros.',
@@ -241,6 +254,7 @@ const TRADUCCIONES = {
     nav_home: 'Home',
     nav_about: 'About Me',
     nav_projects: 'Projects',
+    nav_hackathons: 'Hackathons',
     nav_contact: 'Contact',
     bio_title: 'Biography',
     bio_text: 'Born in Puebla and a Computer Science graduate from BUAP. My profile combines web development with a creative approach to interface design, applying grids and clear visual principles.',
