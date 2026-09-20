@@ -307,19 +307,18 @@
 
   .about-subtitle {
     grid-column: 5 / 6;
-    grid-row: 5 / 13;
+    grid-row: 5 / 10;
     /* mismo rango vertical que la bio, para alinear */
     writing-mode: vertical-rl;
     /* texto vertical, fluye de arriba hacia abajo */
     transform: rotate(180deg);
     /* lo voltea para que se lea de abajo hacia arriba */
-    position: relative;
-    top: 0.8rem;
 
     justify-self: start;
     /* lo pega contra el borde derecho de su columna */
-    align-self: center;
-    /* lo centra junto al bloque de la bio */
+    align-self: end;
+    /* misma línea inferior que .about-copy: la B queda a la altura
+       de la última línea de texto sin depender de cuánto texto haya */
 
     color: var(--red, #FF0000);
     font-weight: 700;
@@ -333,8 +332,8 @@
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     grid-column: 6 / 12;
-    grid-row: 5 / 13;
-    align-self: start;
+    grid-row: 5 / 10;
+    align-self: end;
     font-size: clamp(14px, 1.2vw, 16px);
     line-height: 1.45;
     max-width: 60ch;
@@ -634,16 +633,49 @@
 
   #grid3-2 {
     flex: 1;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  /* ===== PROJECTS EXTRA (proyectos web) ===== */
+  #projects-extra {
     display: flex;
-    flex-direction: column-reverse;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: var(--navbar-height) 0 0 0;
   }
 
-  #grid4-1 {
-    flex: 1.318;
+  #grid1-extra {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
   }
 
-  #grid4-2 {
+  #grid1-1-extra {
+    flex: 1.618;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  #grid1-2-extra {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  #grid2-1-extra {
+    flex: 1.618;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  #grid2-2-extra {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
   }
 
   .foto-wrapper {
@@ -737,12 +769,20 @@
     background-color: #5C7099;
   }
 
-  #grid4-1 .tech-overlay {
+  #grid3-2 .tech-overlay {
     background-color: #A3B1CC;
   }
 
-  #grid4-2 .tech-overlay {
-    background-color: #b5c7ea;
+  #grid1-1-extra .tech-overlay {
+    background-color: #0F3D3A;
+  }
+
+  #grid2-1-extra .tech-overlay {
+    background-color: #4A7C74;
+  }
+
+  #grid2-2-extra .tech-overlay {
+    background-color: #8FB3AC;
   }
 
   .project-description {
@@ -754,7 +794,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: clamp(0.5rem, 4cqw, 2rem);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease;
@@ -765,7 +805,7 @@
 
   .project-description p {
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 1rem;
+    font-size: clamp(0.65rem, 3.2cqw, 1rem);
     line-height: 1.4;
     color: white;
     text-align: center;
@@ -773,12 +813,7 @@
   }
 
   @media (max-width: 640px) {
-    .project-description {
-      padding: 1rem;
-    }
-
     .project-description p {
-      font-size: 0.8rem;
       max-width: 100%;
     }
   }
@@ -804,12 +839,20 @@
     background-color: #5C7099;
   }
 
-  #grid4-1 .project-description {
+  #grid3-2 .project-description {
     background-color: #A3B1CC;
   }
 
-  #grid4-2 .project-description {
-    background-color: #b5c7ea;
+  #grid1-1-extra .project-description {
+    background-color: #0F3D3A;
+  }
+
+  #grid2-1-extra .project-description {
+    background-color: #4A7C74;
+  }
+
+  #grid2-2-extra .project-description {
+    background-color: #8FB3AC;
   }
 
   /* ===== HACKATHONS (foto siempre visible + carrusel manual) ===== */

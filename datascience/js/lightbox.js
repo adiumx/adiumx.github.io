@@ -11,12 +11,12 @@ contenedorLight.addEventListener('click', (e)=>{
     if( e.target != imagenesLight){
         contenedorLight.classList.toggle('show')
         imagenesLight.classList.toggle('showImage')
-        hamburger1.style.opacity = '1'
+        if (hamburger1) hamburger1.style.opacity = '1'
     }
 })
 const aparecerImagen = (imagen)=>{
     imagenesLight.src = imagen;
     contenedorLight.classList.toggle('show')
     imagenesLight.classList.toggle('showImage')
-    hamburger1.style.opacity = '0'
+    if (hamburger1) hamburger1.style.opacity = '0'
 }

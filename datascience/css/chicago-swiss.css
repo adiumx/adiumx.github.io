@@ -1,0 +1,368 @@
+/* ============================================================
+   Chicago Schools — Swiss / International Typographic Style
+   Page-specific override, loaded after main.css on purpose:
+   this page is a technical document, not a portfolio card.
+   ============================================================ */
+
+:root {
+  --paper: #ffffff;
+  --ink: #111111;
+  --ink-soft: #5c5c5c;
+  --accent: #E30613;
+  --rule: #111111;
+  --gap: 24px;
+  --pad: 48px;
+}
+
+@media (max-width: 700px) {
+  :root {
+    --gap: 16px;
+    --pad: 20px;
+  }
+}
+
+/* ---------- base ---------- */
+.swiss-doc,
+.swiss-doc body {
+  background: var(--paper);
+}
+
+body.swiss-doc {
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+.swiss-doc * {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background-image: none;
+}
+
+/* ---------- header / nav (same markup, flat re-skin) ---------- */
+.swiss-doc .header2 {
+  height: auto;
+  max-height: none;
+  background: var(--paper);
+  border-bottom: 1px solid var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.swiss-doc .contenedor {
+  width: 100%;
+  max-width: none;
+  padding: 18px var(--pad);
+  margin: 0;
+}
+
+.swiss-doc .name {
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 0;
+  color: var(--ink);
+}
+
+/* ---------- document shell ---------- */
+.swiss-doc .doc {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 var(--pad);
+  background: var(--paper);
+}
+
+.swiss-doc .grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: var(--gap);
+}
+
+/* back link */
+.swiss-doc .doc-top {
+  padding-top: 32px;
+  padding-bottom: 8px;
+}
+
+.swiss-doc .back-link {
+  grid-column: 1 / span 12;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  text-decoration: none;
+  width: max-content;
+}
+
+.swiss-doc .back-link:hover {
+  color: var(--accent);
+}
+
+.swiss-doc .back-link img {
+  width: 16px;
+  height: 16px;
+  filter: none;
+}
+
+/* hero */
+.swiss-doc .doc-hero {
+  padding-top: 24px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.swiss-doc .eyebrow {
+  grid-column: 1 / span 12;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin: 0 0 20px 0;
+}
+
+.swiss-doc .doc-title {
+  grid-column: 1 / span 10;
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  line-height: 1.02;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin: 0;
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .swiss-doc .doc-title {
+    grid-column: 1 / span 12;
+  }
+}
+
+.swiss-doc .doc-intro {
+  grid-column: 4 / span 9;
+  margin-top: 28px;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 52em;
+}
+
+@media (max-width: 900px) {
+  .swiss-doc .doc-intro {
+    grid-column: 1 / span 12;
+  }
+}
+
+/* generic doc section */
+.swiss-doc .doc-section {
+  padding-top: 56px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid var(--ink);
+  align-items: start;
+}
+
+.swiss-doc .doc-section:last-of-type {
+  border-bottom: none;
+}
+
+.swiss-doc .section-label {
+  grid-column: 1 / span 3;
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.swiss-doc .section-num {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.swiss-doc .section-label h2 {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0;
+  color: var(--ink);
+}
+
+.swiss-doc .section-body {
+  grid-column: 4 / span 9;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (max-width: 900px) {
+  .swiss-doc .section-label {
+    grid-column: 1 / span 12;
+    margin-bottom: 8px;
+  }
+
+  .swiss-doc .section-body {
+    grid-column: 1 / span 12;
+  }
+}
+
+.swiss-doc .lead {
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--ink);
+  max-width: 42em;
+  margin: 0;
+}
+
+.swiss-doc .entry {
+  display: grid;
+  grid-template-columns: 2.5em 1fr;
+  column-gap: 20px;
+  border-top: 1px solid #d8d8d8;
+  padding-top: 20px;
+}
+
+.swiss-doc .entry-num {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.swiss-doc .entry h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: var(--ink);
+  grid-column: 2;
+}
+
+.swiss-doc .entry p {
+  grid-column: 2;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 48em;
+}
+
+@media (max-width: 560px) {
+  .swiss-doc .entry {
+    grid-template-columns: 1fr;
+    row-gap: 6px;
+  }
+
+  .swiss-doc .entry h3,
+  .swiss-doc .entry p {
+    grid-column: 1;
+  }
+
+  .swiss-doc .entry-num {
+    order: -1;
+  }
+}
+
+/* evidence / figures */
+.swiss-doc .evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+
+@media (max-width: 900px) {
+  .swiss-doc .evidence-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.swiss-doc .evidence-item {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.swiss-doc .evidence-item .img-portfolio {
+  border: 1px solid var(--ink);
+  margin-bottom: 0;
+  cursor: zoom-in;
+}
+
+.swiss-doc .evidence-item figcaption {
+  padding-top: 12px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+.swiss-doc .fig-num {
+  display: block;
+  font-weight: 700;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+
+/* lightbox, flat version */
+.swiss-doc .imagen-light {
+  background: rgba(17, 17, 17, 0.92);
+}
+
+.swiss-doc .agregar-imagen {
+  border: 1px solid var(--paper);
+}
+
+.swiss-doc .close {
+  color: var(--paper);
+}
+
+/* footer */
+.swiss-doc footer {
+  background: var(--paper);
+  border-top: 1px solid var(--ink);
+  padding-bottom: 0;
+}
+
+.swiss-doc .footer-content {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.swiss-doc .contact-us .brand {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.swiss-doc .social-media-icon {
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  width: 44px;
+  height: 44px;
+}
+
+.swiss-doc .social-media-icon i {
+  line-height: 44px;
+  font-size: 18px;
+}
+
+.swiss-doc .social-media-icon:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.swiss-doc .line {
+  display: none;
+}

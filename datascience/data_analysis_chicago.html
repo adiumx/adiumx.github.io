@@ -1,126 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Análisis de Datos Relacionales: Escuelas de Chicago — Portfolio</title>
     <script src="https://kit.fontawesome.com/da34e8120e.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/chicago-swiss.css">
 </head>
 
-<body class="light-theme">
+<body class="light-theme swiss-doc">
     <header class="header2" id="inicio">
         <div class="contenedor">
             <h2 class="name">César Ruiz Flores</h2>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon hamburguer" viewBox="0 0 448 512">
-            <path
-                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
-        </svg>
-        <nav class="menu-navegacion">
-            <a href="index.html">inicio</a>
-            <a href="index.html#services">Services</a>
-            <a href="index.html#about">About me</a>
-            <a href="index.html#portfolio">portafolio</a>
-            <a href="index.html#contact">contact</a>
-        </nav>
     </header>
-        <section class="gallery" id="data_analysis">
-            <button class="svg-button">
-                <a href="index.html#portfolio" class="svg-button">
-                    <img src="img\back-arrow.svg" alt="SVG Button" width="50" height="50">
-                </a>
-            </button>
-            <div class="title">
-                <h1>Data analysis chicago schools</h1>
-            </div>
-            <div class="contenedor-objetivos">
-                <div class="column">
-                    <h1>Goal</h1>
 
-                    <h2>Creating and Loading Databases </h2>
-                    <p>Create Database: Set up a new database.
+    <main class="doc" id="data_analysis">
 
-                        Load the Dump Files: Import data into the database from provided dump files.</p>
-                    <h2>Data Querying</h2>
-                    <p>Joins: Use joins to query data across multiple tables, combining related information.
+        <div class="doc-top grid">
+            <a href="../index.html#projects" class="back-link">
+                <img src="img/back-arrow.svg" alt="" width="16" height="16">
+                Volver al portafolio
+            </a>
+        </div>
 
-                        Sub-Queries: Use sub-queries to filter and retrieve data.</p>
-                    <h2>Writing and Executing SQL Queries</h2>
-                    <p>List School Information: Query to list school names, community names, and average attendance for communities with a hardship index of 98.
-
-                        List Crime Information: Query to list all crimes that took place at schools, including case number, crime type, and community name.</p>
-                    <h2>Creating and Querying Views</h2>
-                    <p>Create Views: Create a view to present selected columns from a table with new names, ensuring user privacy by obscuring original data fields.
-
-                        Query Views: Write and execute SQL statements to retrieve specific data from the created view.</p>
-                    <h2>Writing and Running Stored Procedures</h2>
-                    <p>Create Stored Procedure: Develop a stored procedure to update score fields and calculate corresponding icon settings.
-
-                        Handle Transactions: Update the stored procedure to use transactions for ensuring data integrity, rolling back changes when invalid data is provided.</p>
-                    <h2>Using Transactions</h2>
-                    <p>Rollback and Commit: Implement transactions in the stored procedure to handle invalid input and commit valid changes.</p>
-
-                    
-                </div>
-                <div class="column">
-                    <h1>Result</h1>
-                    <p>This project improve the ability to work with relational databases, focusing on SQL queries, views, stored procedures, and transactions.</p>
-                    <h2>Comprehensive Data Queries</h2>
-                    <p>Successfully retrieve and combine data from different tables.</p>
-                    <h2>Effective Data Management</h2>
-                    <p>Create views and stored procedures to manage data privacy and integrity.</p>
-                    <h2>Robust Error Handling</h2>
-                    <p>Use transactions to ensure data consistency and handle invalid inputs appropriately.</p>
-                    
-                </div>
-                <div class="column"><img src="img/sql1.png" alt="an image of executive summary" class="img-portfolio">
-                    <img src="img/sql2.png" alt="an image of executive summary"
-                        class="img-portfolio">
-                    <img src="img/sql3.png" alt="an image of executive summary"
-                        class="img-portfolio">
-                    </div>
-
-            </div>
-
-
-
-
-
-        </section>
-        <section class="imagen-light">
-            <i class="fa-solid fa-xmark close"></i>
-            <img class="agregar-imagen" src="img/sql1.png" alt="">
+        <section class="doc-hero grid">
+            <p class="eyebrow">Consultas SQL · Vistas · Stored Procedures · Transacciones</p>
+            <h1 class="doc-title">Análisis de datos relacionales: escuelas de Chicago</h1>
+            <p class="doc-intro">Este proyecto lo hice para llevar mi conocimiento de SQL más allá de las consultas
+                básicas — quería entender no solo cómo pedir datos, sino cómo protegerlos y mantenerlos consistentes
+                en un sistema real. Trabajé sobre una base de datos de escuelas públicas de Chicago, cruzando
+                información de asistencia, nivel socioeconómico (índice de "hardship") y reportes de incidentes de
+                seguridad — datos que, en la vida real, alguien tendría que manejar con mucho cuidado por su
+                sensibilidad.</p>
         </section>
 
-        </main>
-        <footer id="contact ">
-            <div class="contenedor footer-content">
-                <div class="contact-us">
-                    <h1 class="brand">Telefono: 2228291115</h1>
-                </div>
-                <div class="social-media">
-                    <a href="https://github.com/adiumx/Datascience" class="social-media-icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/cesar-ruiz-f/" class="social-media-icon"><i
-                            class="fa-brands fa-linkedin "></i></a>
-                    <a href="mailto:cesar.ruiz.f@gmail.com" class="social-media-icon"><i
-                            class="fa-solid fa-envelope"></i></a>
+        <section class="doc-section grid" id="goal">
+            <div class="section-label">
+                <span class="section-num">01</span>
+                <h2>Objetivo</h2>
+            </div>
+            <div class="section-body">
+                <article class="entry">
+                    <span class="entry-num">01</span>
+                    <h3>Carga de la base de datos</h3>
+                    <p>Configuré una base de datos nueva e importé la información desde los archivos de dump
+                        proporcionados, como punto de partida para todo el análisis posterior.</p>
+                </article>
+                <article class="entry">
+                    <span class="entry-num">02</span>
+                    <h3>Consultas de datos</h3>
+                    <p>Usé joins para cruzar información entre distintas tablas (escuelas, comunidades, crímenes) y
+                        sub-queries para filtrar y refinar los resultados según condiciones específicas.</p>
+                </article>
+                <article class="entry">
+                    <span class="entry-num">03</span>
+                    <h3>Consultas aplicadas</h3>
+                    <p>Practiqué dos técnicas de consulta relacional sobre datos públicos de Chicago: un LEFT JOIN
+                        para identificar crímenes ocurridos en instalaciones escolares, cruzando la tabla de
+                        crímenes con la de datos socioeconómicos por área comunitaria; y una sub-query para
+                        encontrar las escuelas ubicadas en la comunidad con el índice de privación socioeconómica
+                        más alto de la ciudad (hardship index = 98).</p>
+                </article>
+                <article class="entry">
+                    <span class="entry-num">04</span>
+                    <h3>Vistas de datos</h3>
+                    <p>Creé vistas que exponen solo las columnas necesarias, ocultando los campos originales — un
+                        ejercicio de pensar en privacidad de datos desde el diseño, no como un parche después.</p>
+                </article>
+                <article class="entry">
+                    <span class="entry-num">05</span>
+                    <h3>Stored procedures</h3>
+                    <p>Desarrollé un stored procedure para actualizar campos de calificación y sus indicadores
+                        asociados, incorporando manejo de transacciones para garantizar la integridad de los datos.
+                    </p>
+                </article>
+                <article class="entry">
+                    <span class="entry-num">06</span>
+                    <h3>Transacciones</h3>
+                    <p>Implementé rollback y commit en el stored procedure: si los datos de entrada no son válidos,
+                        el sistema revierte automáticamente los cambios en vez de dejar la base de datos en un
+                        estado inconsistente a medias.</p>
+                </article>
+            </div>
+        </section>
 
+        <section class="doc-section grid" id="result">
+            <div class="section-label">
+                <span class="section-num">02</span>
+                <h2>Resultado</h2>
+            </div>
+            <div class="section-body">
+                <p class="lead">Estas consultas fueron independientes entre sí, cada una resolviendo una pregunta
+                    puntual del set de ejercicios. Lo que demuestran en conjunto no es un análisis integral único,
+                    sino dominio de dos formas distintas de relacionar tablas por una clave común
+                    (COMMUNITY_AREA_NUMBER): join y sub-query, eligiendo la técnica correcta según lo que la
+                    pregunta requería.</p>
+            </div>
+        </section>
 
+        <section class="doc-section grid" id="evidence">
+            <div class="section-label">
+                <span class="section-num">03</span>
+                <h2>Evidencia</h2>
+            </div>
+            <div class="section-body">
+                <div class="evidence-grid">
+                    <figure class="evidence-item">
+                        <img src="img/sql1.png"
+                            alt="phpMyAdmin: LEFT OUTER JOIN entre chicago_crime y chicago_socioeconomic_data filtrado por ubicaciones escolares"
+                            class="img-portfolio">
+                        <figcaption>
+                            <span class="fig-num">Fig. 01</span>
+                            Consulta JOIN — crímenes registrados en instalaciones escolares
+                        </figcaption>
+                    </figure>
+                    <figure class="evidence-item">
+                        <img src="img/sql2.png"
+                            alt="phpMyAdmin: consulta JOIN que devuelve número de caso, tipo de crimen y área comunitaria"
+                            class="img-portfolio">
+                        <figcaption>
+                            <span class="fig-num">Fig. 02</span>
+                            Consulta JOIN — número de caso, tipo de crimen y área comunitaria
+                        </figcaption>
+                    </figure>
+                    <figure class="evidence-item">
+                        <img src="img/sql3.png"
+                            alt="phpMyAdmin: sub-query que devuelve escuelas en áreas comunitarias con índice de hardship 98"
+                            class="img-portfolio">
+                        <figcaption>
+                            <span class="fig-num">Fig. 03</span>
+                            Sub-query — escuelas en áreas con índice de hardship 98
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
-            <div class="line"></div>
-        </footer>
-        <script src="js/app.js"></script>
-        <script src="js/menu.js"></script>
-        <script src="js/lightbox.js"></script>
-        <script src="js/lightbox2.js"></script>
+        </section>
+
+    </main>
+
+    <section class="imagen-light">
+        <i class="fa-solid fa-xmark close"></i>
+        <img class="agregar-imagen" src="img/sql1.png" alt="">
+    </section>
+
+    <footer id="contact ">
+        <div class="contenedor footer-content">
+            <div class="contact-us">
+                <h1 class="brand">Telefono: 2228291115</h1>
+            </div>
+            <div class="social-media">
+                <a href="https://github.com/adiumx/Datascience" class="social-media-icon"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/cesar-ruiz-f/" class="social-media-icon"><i
+                        class="fa-brands fa-linkedin "></i></a>
+                <a href="mailto:cesar.ruiz.f@gmail.com" class="social-media-icon"><i
+                        class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="line"></div>
+    </footer>
+    <script src="js/app.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script src="js/lightbox2.js"></script>
 </body>
 
 </html>

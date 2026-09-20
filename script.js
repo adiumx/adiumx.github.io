@@ -18,6 +18,18 @@ document.querySelector('.navbar a[href="#home"]')?.classList.add('active');
 let actual = 0;       // índice de la sección visible
 let animando = false; // evita que el scroll se dispare varias veces seguidas
 
+// Si se llega con un hash (ej. "#projects" desde un link de regreso),
+// salta ahí de inmediato sin animación, sin depender de irASeccion().
+const indiceInicial = Array.from(secciones).findIndex((s) => s.id === location.hash.slice(1));
+if (indiceInicial > 0) {
+  actual = indiceInicial;
+  container.style.transform = `translateY(-${actual * 100}dvh)`;
+  document.querySelectorAll('.navbar a').forEach((link) => {
+    link.classList.toggle('active', link.getAttribute('href') === location.hash);
+  });
+  history.replaceState(null, '', location.pathname + location.search);
+}
+
 // Duración y curva de animación: ajusta estos valores a tu gusto
 const DURACION = 700; // milisegundos
 const EASING = 'cubic-bezier(0.65, 0, 0.35, 1)';
@@ -245,6 +257,8 @@ const TRADUCCIONES = {
     p1: 'Proyecto integrador',
     p2: 'Tecnologías: JavaScript, Fetch API. Usé la Fetch API para realizar solicitudes HTTP y obtener datos en formato JSON desde la API pública de Rick and Morty. Con ayuda de una IA generé el código base, lo adapté y aprendí a manejar promesas, errores y a mostrar resultados dinámicos en la interfaz.',
     p3: 'Juego de Tic Tac Toe con lógica de turnos, detección de victoria y diseño responsivo.',
+    p4: 'Consultas SQL con joins y sub-queries, vistas para proteger privacidad de datos, y stored procedures con manejo de transacciones.',
+    p5: 'Lideré el desarrollo de un e-commerce con Java, Spring Boot y MySQL en un equipo de 8 personas durante 5 sprints, gestionando la planificación en Jira y la integración frontend-backend (APIs REST).',
     cv: 'Descargar CV',
     tema_oscuro: 'Oscuro',
     tema_claro: 'Claro',
@@ -263,6 +277,8 @@ const TRADUCCIONES = {
     p1: 'Capstone project',
     p2: 'Tech: JavaScript, Fetch API. I used the Fetch API to make HTTP requests and get JSON data from the public Rick and Morty API. With help from an AI I generated the base code, adapted it, and learned to handle promises, errors and render dynamic results in the interface.',
     p3: 'Tic Tac Toe game with turn logic, win detection and responsive design.',
+    p4: 'SQL queries with joins and sub-queries, views to protect data privacy, and stored procedures with transaction handling.',
+    p5: 'I led the development of an e-commerce platform using Java, Spring Boot and MySQL with a team of 8 over 5 sprints, managing sprint planning in Jira and the frontend-backend integration (REST APIs).',
     cv: 'Download CV',
     tema_oscuro: 'Dark',
     tema_claro: 'Light',

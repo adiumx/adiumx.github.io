@@ -11,5 +11,5 @@ const aparecerImagen2 = (imagen)=>{
     imagenesLight2.src = imagen;
     contenedorLight2.classList.toggle('show')
     imagenesLight2.classList.toggle('showImage')
-    hamburger1.style.opacity = '0'
+    if (typeof hamburger1 !== 'undefined' && hamburger1) hamburger1.style.opacity = '0'
 }
